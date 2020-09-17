@@ -1,0 +1,166 @@
+{
+    "build_systems": [
+    {
+        "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+        "name": "Anaconda Python Builder",
+        "selector": "source.python",
+        "shell_cmd": "\"python\" -u \"$file\""
+    },
+    {
+        "command": "build",
+        "keyfiles": [
+            "Cargo.toml"
+        ],
+        "name": "Custom Cargo Build",
+        "selector": "source.rust",
+        "target": "cargo_exec",
+        "variants": [
+        {
+            "command": "check",
+            "command_info":
+            {},
+            "name": "guyos's check bin main",
+            "settings":
+            {
+                "env":
+                {},
+                "extra_cargo_args": "",
+                "extra_run_args": "",
+                "features": "",
+                "no_default_features": false,
+                "release": false,
+                "target": "--bin main",
+                "target_triple": "",
+                "toolchain": "",
+                "working_dir": "/home/guyos/Documents/cities"
+            },
+            "target": "cargo_exec"
+        },
+        {
+            "command": "check",
+            "command_info":
+            {},
+            "name": "check bin main",
+            "settings":
+            {
+                "env":
+                {},
+                "extra_cargo_args": "",
+                "extra_run_args": "",
+                "features": "",
+                "no_default_features": false,
+                "release": false,
+                "target": "--bin main",
+                "target_triple": "",
+                "toolchain": "",
+                "working_dir": "/home/guyos/Documents/cities"
+            },
+            "target": "cargo_exec"
+        },
+        {
+            "command": "auto",
+            "name": "Automatic"
+        },
+        {
+            "command": "run",
+            "name": "Run"
+        },
+        {
+            "command": "run",
+            "command_info":
+            {
+                "wants_run_args": true
+            },
+            "name": "Run (with args)..."
+        },
+        {
+            "command": "check",
+            "name": "Check"
+        },
+        {
+            "command": "test",
+            "name": "Test"
+        },
+        {
+            "command": "test",
+            "command_info":
+            {
+                "wants_run_args": true
+            },
+            "name": "Test (with args)..."
+        },
+        {
+            "command": "bench",
+            "name": "Bench"
+        },
+        {
+            "command": "clean",
+            "name": "Clean"
+        },
+        {
+            "command": "doc",
+            "name": "Document"
+        },
+        {
+            "command": "clippy",
+            "name": "Clippy"
+        },
+        {
+            "command": "script",
+            "name": "Script"
+        }]
+    }],
+    "folders": [
+    {
+        "path": "."
+    }],
+    "settings":
+    {
+        "rsync_ssh":
+        {
+            "excludes": [
+                ".env",
+                ".git*",
+                "_build",
+                "blib",
+                "dist",
+                "Build",
+                "build",
+                "index",
+                "*.so",
+                "model",
+                "__pycache__",
+                ".ipynb_checkpoints",
+                "target",
+                "CMakeCache.txt",
+                "build",
+                "CMakeFiles",
+                "cmake_install.cmake",
+                "cities/cymatrix.c",
+                "MANIFEST"
+            ],
+            "options": [
+                "--delete"
+            ],
+            "remotes":
+            {
+                "cities": [
+                {
+                    "enabled": 1,
+                    "remote_host": "server3",
+                    "remote_path": "/data/1/cities",
+                    "remote_port": 1022,
+                    "remote_user": "konevec"
+                },
+                {
+                    "enabled": 1,
+                    "remote_host": "server1",
+                    "remote_path": "/data/cities",
+                    "remote_port": 1022,
+                    "remote_user": "konevec"
+                }]
+            },
+            "sync_on_save": true
+        }
+    }
+}
